@@ -49,7 +49,12 @@ class Signup extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 11),
-              AppButton(label: "SignUp", onPress: onSignPress)
+              GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => SignIn()));
+                  },
+                  child: AppButton(label: "SignUp", onPress: onSignPress))
             ],
           )),
     );

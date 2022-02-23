@@ -1,3 +1,5 @@
+import 'package:app/Screens/listing.dart';
+import 'package:app/Screens/signup.dart';
 import 'package:flutter/material.dart';
 
 import '../app_button.dart';
@@ -31,20 +33,28 @@ class SignIn extends StatelessWidget {
               const AppTextfeild(placeholder: "Enter your password"),
               const Spacer(),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => Signup()));
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Text("Already have an account ?",
+                    Text("Don’t have an account ?",
                         style:
                             TextStyle(color: Color(0xFF8F8F9E), fontSize: 15)),
-                    Text(" Sign In",
+                    Text(" Register",
                         style: TextStyle(color: Colors.white, fontSize: 15)),
                   ],
                 ),
               ),
               const SizedBox(height: 11),
-              AppButton(label: "SignUp", onPress: onSignPress)
+              GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => Listing()));
+                  },
+                  child: AppButton(label: "SignIn", onPress: onSignPress))
             ],
           )),
     );
