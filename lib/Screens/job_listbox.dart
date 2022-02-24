@@ -11,7 +11,10 @@ class Job_BoxList extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 11, right: 27),
+            width: 360,
+            height: 102,
+            padding: const EdgeInsets.all(36),
             decoration: BoxDecoration(
                 color: const Color(0xFF201E27),
                 border: Border.all(
